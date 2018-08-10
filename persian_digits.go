@@ -1,4 +1,4 @@
-package stringutils
+package gopersian
 
 const (
 	persianToEnglishDiff = '۰' - '0' // 1728
