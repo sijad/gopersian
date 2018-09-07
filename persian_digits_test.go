@@ -75,3 +75,27 @@ func TestEnglishTopPersianDigits(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkPersianToEnglishDigitNonDigitsShort(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		PersianToEnglishDigits("abcdefg abcdefg abcdefg abcdefg")
+	}
+}
+
+func BenchmarkPersianToEnglishDigitNonDigitsLong(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		PersianToEnglishDigits("abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg abcdefg")
+	}
+}
+
+func BenchmarkPersianToEnglishDigitShortString(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		PersianToEnglishDigits("۰۱۲۳۴۵۶۷۸۹")
+	}
+}
+
+func BenchmarkPersianToEnglishDigitLongString(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		PersianToEnglishDigits("۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹ ۰۱۲۳۴۵۶۷۸۹")
+	}
+}

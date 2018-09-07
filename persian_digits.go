@@ -1,5 +1,9 @@
 package gopersian
 
+import (
+	"strings"
+)
+
 const (
 	persianToEnglishDiff = '۰' - '0' // 1728
 )
@@ -15,6 +19,10 @@ func EnglishToPersianDigits(str string) string {
 }
 
 func convertDigits(str string, min, max, diff rune) string {
+	if !containsAnyInRange(str, min, max) {
+		return str
+	}
+
 	newStr := make([]rune, 0, len(str))
 	for _, r := range str {
 		if r >= min && r <= max {
@@ -24,4 +32,14 @@ func convertDigits(str string, min, max, diff rune) string {
 	}
 
 	return string(newStr)
+}
+
+func containsAnyInRange(s string, a, b rune) bool {
+	for i := a; i <= b; i++ {
+		if strings.ContainsRune(s, i) {
+			return true
+		}
+	}
+
+	return false
 }
